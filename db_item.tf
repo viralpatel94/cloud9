@@ -9,7 +9,7 @@ locals {
 
 resource "aws_dynamodb_table_item" "inventory" {
   table_name = "client-environments"
-  hash_key   = data.terraform_remote_state.dynamodb.outputs.hash_key
+  hash_key   = "ClientName"
 
   item = <<ITEM
   {
