@@ -10,6 +10,6 @@ output "s3_bucket" {
 }
 
 output "cloud9" {
-  description = "The S3 bucket ARN"
-  value       = resource.aws_cloudformation_stack.cloud9.outputs["Cloud9ARN"]
+  description = "The environment name "
+  value       = resource.aws_cloudformation_stack.cloud9.outputs["Cloud9Name"]
 }
