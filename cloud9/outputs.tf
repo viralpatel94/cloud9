@@ -11,5 +11,5 @@ output "s3_bucket" {
 
 output "cloud9" {
   description = "The environment name "
-  value       = resource.aws_cloudformation_stack.cloud9.outputs["Cloud9Name"]
+  value       = resource.aws_cloudformation_stack.cloud9.outputs["Cloud9ARN"]
 }

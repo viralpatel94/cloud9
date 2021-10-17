@@ -387,8 +387,8 @@ Resources:
           Value: !Ref Name
 
 Outputs:
-  Cloud9Name:
-    Value: !GetAtt C9Instance.Name
+  Cloud9ARN:
+    Value: !GetAtt C9Instance.Arn
   Cloud9IDE:
     Value:
       Fn::Join:
