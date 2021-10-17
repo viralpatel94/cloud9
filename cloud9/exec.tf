@@ -1,10 +1,12 @@
 data "aws_secretsmanager_secret" "token" {
-  name = var.name
+  depends_on = [module.secret]
+  name       = var.name
 }
 
 
 data "aws_secretsmanager_secret_version" "token_value" {
-  secret_id = data.aws_secretsmanager_secret.token.id
+  depends_on = [module.secret]
+  secret_id  = data.aws_secretsmanager_secret.token.id
 }
 
 
