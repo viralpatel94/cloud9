@@ -30,9 +30,9 @@ resource "aws_dynamodb_table_item" "example" {
   table_name = "client-environments"
   hash_key   = "ClientName"
 
-  item = <<ITEM
+  item = <<EOF
 {
   "ClientName": {"S": "something"}
 }
-ITEM
+EOF
 }
