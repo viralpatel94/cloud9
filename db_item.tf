@@ -9,7 +9,7 @@ locals {
 
 resource "aws_dynamodb_table_item" "inventory" {
   table_name = "client-environments"
-  hash_key   = var.name
+  hash_key   = "ClientName"
   # range_key  = local.timestamp_sanitized
 
   item = <<ITEM
