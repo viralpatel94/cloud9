@@ -29,3 +29,17 @@ variable "repo" {
   description = "The name of the repo"
   type        = string
 }
+
+variable "access_key" {
+  description = "Access key used to deploy into AWS"
+  type        = string
+  sensitive   = true
+  default     = ""
+}
+
+variable "secret_key" {
+  description = "Secert key used to deploy into AWS"
+  type        = string
+  sensitive   = true
+  default     = ""
+}

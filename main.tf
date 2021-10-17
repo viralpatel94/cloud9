@@ -36,4 +36,6 @@ module "cloud9" {
   owner         = var.owner
   repo          = var.repo
   secret_arn    = module.secerts.secret_arn
+  access_key    = var.access_key
+  secret_key    = var.secret_key
 }
