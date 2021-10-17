@@ -30,11 +30,13 @@ No requirements.
 | <a name="input_access_key"></a> [access\_key](#input\_access\_key) | Access key used to deploy into AWS | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The instance type of the cloud9 instance | `string` | `"m5.large"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to be used on all the resources as identifier | `string` | `""` | no |
-| <a name="input_owner"></a> [owner](#input\_owner) | The owner of the repo | `string` | n/a | yes |
+| <a name="input_owner"></a> [owner](#input\_owner) | The owner of the GitHub repo | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | region used for AZ | `string` | `""` | no |
-| <a name="input_repo"></a> [repo](#input\_repo) | The name of the repo | `string` | n/a | yes |
+| <a name="input_repo"></a> [repo](#input\_repo) | The name of the GitHub repo | `string` | n/a | yes |
 | <a name="input_secret_key"></a> [secret\_key](#input\_secret\_key) | Secert key used to deploy into AWS | `string` | `""` | no |
-| <a name="input_token"></a> [token](#input\_token) | The token for clone a repo | `string` | n/a | yes |
+| <a name="input_tf_org"></a> [tf\_org](#input\_tf\_org) | The terraform organization in which the VPC exists | `string` | n/a | yes |
+| <a name="input_tf_workspace"></a> [tf\_workspace](#input\_tf\_workspace) | The terraform workspace in which the VPC exists | `string` | n/a | yes |
+| <a name="input_token"></a> [token](#input\_token) | The GitHub token for clone a repo | `string` | n/a | yes |
 
 ## Outputs
 

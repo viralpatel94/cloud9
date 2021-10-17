@@ -31,17 +31,27 @@ variable "instance_type" {
 }
 
 variable "token" {
-  description = "The token for clone a repo"
+  description = "The GitHub token for clone a repo"
   type        = string
   sensitive   = true
 }
 
 variable "owner" {
-  description = "The owner of the repo"
+  description = "The owner of the GitHub repo"
   type        = string
 }
 
 variable "repo" {
-  description = "The name of the repo"
+  description = "The name of the GitHub repo"
+  type        = string
+}
+
+variable "tf_org" {
+  description = "The terraform organization in which the VPC exists"
+  type        = string
+}
+
+variable "tf_workspace" {
+  description = "The terraform workspace in which the VPC exists"
   type        = string
 }
