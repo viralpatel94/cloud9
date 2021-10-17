@@ -7,6 +7,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
@@ -21,6 +22,7 @@ No requirements.
 
 | Name | Type |
 |------|------|
+| [aws_dynamodb_table_item.inventory](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table_item) | resource |
 | [terraform_remote_state.vpc](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
@@ -28,6 +30,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_access_key"></a> [access\_key](#input\_access\_key) | Access key used to deploy into AWS | `string` | `""` | no |
+| <a name="input_creator"></a> [creator](#input\_creator) | Name of the person who deployed | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The instance type of the cloud9 instance | `string` | `"m5.large"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to be used on all the resources as identifier | `string` | `""` | no |
 | <a name="input_owner"></a> [owner](#input\_owner) | The owner of the GitHub repo | `string` | n/a | yes |

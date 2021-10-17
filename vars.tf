@@ -4,6 +4,13 @@ variable "name" {
   default     = ""
 }
 
+variable "creator" {
+  description = "Name of the person who deployed"
+  type        = string
+  default     = ""
+}
+
+
 variable "region" {
   description = "region used for AZ"
   type        = string
