@@ -34,5 +34,5 @@ module "secerts" {
   source      = "./secrets"
   kms_arn     = module.cloud9.kms_id
   secret_name = var.name
-  token       = var.token
+  token_name  = var.token
 }
