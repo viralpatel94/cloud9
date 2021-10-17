@@ -15,11 +15,10 @@ variable "subnet" {
   type        = string
 }
 
-# variable "token" {
-#   description = "The token for clone a repo"
-#   type        = string
-#   sensitive   = true
-# }
+variable "secret_arn" {
+  description = "The arn of the github token"
+  type        = string
+}
 
 variable "owner" {
   description = "The owner of the repo"
