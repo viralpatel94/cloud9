@@ -13,7 +13,12 @@ data "terraform_remote_state" "vpc" {
     }
   }
 }
-
+module "secerts" {
+  source      = "./secrets"
+  kms_arn     = module.cloud9.kms_id
+  secret_name = var.name
+  token_value = var.token
+}
 module "backup" {
   source       = "./backup"
   kms_arn      = module.cloud9.kms_id
@@ -28,11 +33,4 @@ module "cloud9" {
   subnet        = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   owner         = var.owner
   repo          = var.repo
-}
-
-module "secerts" {
-  source      = "./secrets"
-  kms_arn     = module.cloud9.kms_id
-  secret_name = var.name
-  token_value = var.token
 }
