@@ -26,13 +26,29 @@ locals {
 #
 # }
 
-resource "aws_dynamodb_table_item" "example" {
-  table_name = "client-environments"
-  hash_key   = "ClientName"
+resource "aws_dynamodb_table" "example" {
+  name           = "example-name"
+  read_capacity  = 10
+  write_capacity = 10
+  hash_key       = "exampleHashKey"
 
-  item = <<EOF
-{
-  "ClientName": {"S": "something"}
+  attribute {
+    name = "exampleHashKey"
+    type = "S"
+  }
 }
-EOF
+
+resource "aws_dynamodb_table_item" "example" {
+  table_name = aws_dynamodb_table.example.name
+  hash_key   = aws_dynamodb_table.example.hash_key
+
+  item = <<ITEM
+{
+  "exampleHashKey": {"S": "something"},
+  "one": {"N": "11111"},
+  "two": {"N": "22222"},
+  "three": {"N": "33333"},
+  "four": {"N": "44444"}
+}
+ITEM
 }
