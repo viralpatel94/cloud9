@@ -33,10 +33,7 @@ resource "aws_dynamodb_table_item" "example" {
   item = <<ITEM
 {
   "ClientName": {"S": "something"},
-  "one": {"N": "11111"},
-  "two": {"N": "22222"},
-  "three": {"N": "33333"},
-  "four": {"N": "44444"}
+  "one": {"N": "11111"}
 }
 ITEM
 }
