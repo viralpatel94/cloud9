@@ -1,6 +1,6 @@
 resource "aws_secretsmanager_secret" "token" {
-  name = var.secret_name
-  # kms_key_id = var.kms_arn
+  name       = var.secret_name
+  kms_key_id = var.kms_arn
 }
 
 resource "aws_secretsmanager_secret_version" "token_update" {

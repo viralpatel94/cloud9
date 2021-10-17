@@ -1,8 +1,8 @@
-# variable "kms_arn" {
-#   description = "KMS Key ARN"
-#   type        = string
-#   default     = ""
-# }
+variable "kms_arn" {
+  description = "KMS Key ARN"
+  type        = string
+  default     = ""
+}
 
 variable "secret_name" {
   description = "Name of the secret"
