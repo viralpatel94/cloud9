@@ -387,6 +387,8 @@ Resources:
           Value: !Ref Name
 
 Outputs:
+  Cloud9ARN:
+    Value: !GetAtt C9Instance.Arn
   Cloud9IDE:
     Value:
       Fn::Join:
@@ -397,5 +399,3 @@ Outputs:
         - Ref: C9Instance
         - "?region="
         - Ref: AWS::Region
-  Cloud9ARN:
-    Value: !GetAtt C9Instance.Arn
