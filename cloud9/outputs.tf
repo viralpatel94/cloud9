@@ -6,7 +6,7 @@ output "kms_id" {
 
 output "s3_bucket" {
   description = "The S3 bucket ARN"
-  value       = resource.aws_s3_bucket.b.id
+  value       = resource.aws_s3_bucket.b.arn
 }
 
 output "cloud9" {
