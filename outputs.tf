@@ -4,7 +4,7 @@ output "secret_arn" {
   value       = module.secerts.secret_arn
 }
 
-output "token_arn" {
+output "kms_arn" {
   description = "ARN of the secret that has the github token"
   value       = module.cloud9.kms_id
 }
