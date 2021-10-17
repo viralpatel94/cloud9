@@ -33,5 +33,5 @@ module "cloud9" {
   subnet        = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   owner         = var.owner
   repo          = var.repo
-  secret_arn    = module.secrets.output.secerts_arn
+  secret_arn    = module.secrets.output.secret_arn
 }
