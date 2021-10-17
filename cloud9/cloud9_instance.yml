@@ -397,3 +397,5 @@ Outputs:
         - Ref: C9Instance
         - "?region="
         - Ref: AWS::Region
+  Cloud9ARN:
+    Value: !GetAtt C9Instance.Arn

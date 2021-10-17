@@ -38,5 +38,10 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloud9_ide"></a> [cloud9\_ide](#output\_cloud9\_ide) | ARN of the Cloud9 IDE |
+| <a name="output_s3_bucket"></a> [s3\_bucket](#output\_s3\_bucket) | ARN of the S3 bucket ot house code |
+| <a name="output_secret_arn"></a> [secret\_arn](#output\_secret\_arn) | ARN of the secret that has the github token |
+| <a name="output_token_arn"></a> [token\_arn](#output\_token\_arn) | ARN of the secret that has the github token |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
