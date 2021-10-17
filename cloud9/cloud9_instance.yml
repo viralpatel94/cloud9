@@ -383,7 +383,7 @@ Resources:
           Key: Environment
           Value: AWS
         -
-          Key: Name
+          Key: ClientName
           Value: !Ref Name
 
 Outputs:

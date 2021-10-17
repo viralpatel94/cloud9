@@ -7,13 +7,11 @@ variable "kms_arn" {
 variable "vault_name" {
   description = "Name of the vault"
   type        = string
-  default     = "cloud9-vault"
 }
 
 variable "plan_name" {
   description = "Name of the plan"
   type        = string
-  default     = "cloud9-plan"
 }
 
 variable "cron_expression" {

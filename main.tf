@@ -22,8 +22,10 @@ module "secerts" {
 module "backup" {
   source       = "./backup"
   kms_arn      = module.cloud9.kms_id
-  backup_key   = "Name"
+  backup_key   = "ClientName"
   backup_value = var.name
+  vault_name   = "${var.name}-vault"
+  plan_name    = "${var.name}-plan"
 }
 
 module "cloud9" {
