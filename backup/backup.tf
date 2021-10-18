@@ -45,7 +45,4 @@ module "aws_backup_example" {
   #   Environment = "prod"
   #   Terraform   = true
   # }
-  lifecycle {
-    prevent_destroy = true
-  }
 }
