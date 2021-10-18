@@ -56,6 +56,6 @@ resource "null_resource" "dbitem" {
   provisioner "local-exec" {
     command = <<EOT
               AWS_ACCESS_KEY_ID=${var.access_key} AWS_SECRET_ACCESS_KEY=${var.secret_key} aws dynamodb put-item --table-name client-environments --item ${jsonencode(local.object)}
-    EOT
+EOT
   }
 }
