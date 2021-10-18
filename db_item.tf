@@ -26,29 +26,31 @@ locals {
 #
 # }
 
-resource "aws_dynamodb_table" "alert_log" {
-  name           = "alert-log"
-  hash_key       = "messageID"
-  read_capacity  = 20
-  write_capacity = 20
+resource "aws_dynamodb_table_item" "example" {
+  depends_on = [resource.aws_dynamodb_table_item.example]
 
-
-  attribute {
-    name = "messageID"
-    type = "S"
-  }
-
-}
-
-resource "aws_dynamodb_table_item" "alert_log_counter_item" {
-  depends_on = [resource.aws_dynamodb_table.alert_log]
-  table_name = aws_dynamodb_table.alert_log.name
-  hash_key   = aws_dynamodb_table.alert_log.hash_key
+  table_name = aws_dynamodb_table.example.name
+  hash_key   = aws_dynamodb_table.example.hash_key
 
   item = <<ITEM
 {
-    "messageID": {"S": "counter"},
-    "message": {"S":"0"}
+  "exampleHashKey": {"S": "something"},
+  "one": {"N": "11111"},
+  "two": {"N": "22222"},
+  "three": {"N": "33333"},
+  "four": {"N": "44444"}
 }
 ITEM
+}
+
+resource "aws_dynamodb_table" "example" {
+  name           = "example-name"
+  read_capacity  = 10
+  write_capacity = 10
+  hash_key       = "exampleHashKey"
+
+  attribute {
+    name = "exampleHashKey"
+    type = "S"
+  }
 }
