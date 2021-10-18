@@ -1,6 +1,9 @@
 locals {
   timestamp           = timestamp()
   timestamp_sanitized = replace("${local.timestamp}", "/[- TZ:]/", "")
+  object = map({
+    "exampleHashKey" : { "S" : "something" }
+  })
 
 }
 
@@ -26,21 +29,14 @@ locals {
 #
 # }
 
+
 resource "aws_dynamodb_table_item" "example" {
   depends_on = [resource.aws_dynamodb_table_item.example]
 
   table_name = aws_dynamodb_table.example.name
   hash_key   = aws_dynamodb_table.example.hash_key
 
-  item = <<ITEM
-{
-  "exampleHashKey": {"S": "something"},
-  "one": {"N": "11111"},
-  "two": {"N": "22222"},
-  "three": {"N": "33333"},
-  "four": {"N": "44444"}
-}
-ITEM
+  item = jsonencode(var.object)
 }
 
 resource "aws_dynamodb_table" "example" {
