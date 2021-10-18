@@ -26,12 +26,6 @@ locals {
 #
 # }
 
-provider "aws" {
-  region     = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
-}
-
 resource "aws_dynamodb_table" "alert_log" {
   name           = "alert-log"
   hash_key       = "messageID"
