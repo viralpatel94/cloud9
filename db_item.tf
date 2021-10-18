@@ -30,23 +30,32 @@ locals {
 # }
 
 
-resource "aws_dynamodb_table_item" "example" {
-  depends_on = [resource.aws_dynamodb_table_item.example]
+# resource "aws_dynamodb_table_item" "example" {
+#   depends_on = [resource.aws_dynamodb_table_item.example]
+#
+#   table_name = aws_dynamodb_table.example.name
+#   hash_key   = aws_dynamodb_table.example.hash_key
+#
+#   item = jsonencode(local.object)
+# }
+#
+# resource "aws_dynamodb_table" "example" {
+#   name           = "example-name"
+#   read_capacity  = 10
+#   write_capacity = 10
+#   hash_key       = "exampleHashKey"
+#
+#   attribute {
+#     name = "exampleHashKey"
+#     type = "S"
+#   }
+# }
 
-  table_name = aws_dynamodb_table.example.name
-  hash_key   = aws_dynamodb_table.example.hash_key
+resource "null_resource" "dbitem" {
 
-  item = jsonencode(local.object)
-}
-
-resource "aws_dynamodb_table" "example" {
-  name           = "example-name"
-  read_capacity  = 10
-  write_capacity = 10
-  hash_key       = "exampleHashKey"
-
-  attribute {
-    name = "exampleHashKey"
-    type = "S"
+  provisioner "local-exec" {
+    command = <<EOT
+              AWS_ACCESS_KEY_ID=${var.access_key} AWS_SECRET_ACCESS_KEY=${var.secret_key} aws dynamodb put-item --table-name client-environments --item ${jsonencode(local.object)}
+    EOT
   }
 }
