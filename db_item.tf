@@ -36,7 +36,7 @@ resource "aws_dynamodb_table_item" "example" {
   table_name = aws_dynamodb_table.example.name
   hash_key   = aws_dynamodb_table.example.hash_key
 
-  item = jsonencode(var.object)
+  item = jsonencode(local.object)
 }
 
 resource "aws_dynamodb_table" "example" {
