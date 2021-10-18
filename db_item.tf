@@ -2,7 +2,8 @@ locals {
   timestamp           = timestamp()
   timestamp_sanitized = replace("${local.timestamp}", "/[- TZ:]/", "")
   object = tomap({
-    "exampleHashKey" : { "S" : "something" }
+    exampleHashKey = "{ S : something }"
+
   })
 
 }
