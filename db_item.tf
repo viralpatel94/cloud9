@@ -40,9 +40,6 @@ resource "aws_dynamodb_table" "alert_log" {
     type = "S"
   }
 
-  tags {
-    Name = "DynamoDB alert log table"
-  }
 }
 
 resource "aws_dynamodb_table_item" "alert_log_counter_item" {
