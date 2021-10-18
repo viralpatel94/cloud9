@@ -38,14 +38,14 @@ resource "aws_dynamodb_table" "example" {
   }
 }
 
-resource "aws_dynamodb_table_item" "example" {
-  table_name = aws_dynamodb_table.example.name
-  hash_key   = aws_dynamodb_table.example.hash_key
-
-  item = jsonencode(
-    {
-      "exampleHashKey" : { "S" : "something" }
-    }
-  )
-
-}
+# resource "aws_dynamodb_table_item" "example" {
+#   table_name = aws_dynamodb_table.example.name
+#   hash_key   = aws_dynamodb_table.example.hash_key
+#
+#   item = jsonencode(
+#     {
+#       "exampleHashKey" : { "S" : "something" }
+#     }
+#   )
+#
+# }
