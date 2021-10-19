@@ -51,7 +51,7 @@ locals {
 # }
 
 data "template_file" "item" {
-  template = file("./db_item.tpl")
+  template = file("./item_json.tpl")
   vars = {
     "name"                = "${var.name}",
     "timestamp_sanitized" = "${local.timestamp_sanitized}",
