@@ -8,6 +8,7 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_null"></a> [null](#provider\_null) | n/a |
+| <a name="provider_template"></a> [template](#provider\_template) | n/a |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
@@ -23,6 +24,7 @@ No requirements.
 | Name | Type |
 |------|------|
 | [null_resource.dbitem](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [template_file.item](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 | [terraform_remote_state.vpc](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
