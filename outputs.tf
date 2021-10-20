@@ -1,7 +1,7 @@
 
 output "secret_arn" {
   description = "ARN of the secret that has the github token"
-  value       = module.secerts.secret_arn
+  value       = module.secrets.secret_arn
 }
 
 output "kms_arn" {

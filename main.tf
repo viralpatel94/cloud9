@@ -35,7 +35,7 @@ module "cloud9" {
   subnet            = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   Github_repo_owner = var.Github_repo_owner
   Github_repo_name  = var.Github_repo_name
-  secret_arn        = module.secerts.secret_arn
+  secret_arn        = module.secrets.secret_arn
   access_key        = var.access_key
   secret_key        = var.secret_key
 }
