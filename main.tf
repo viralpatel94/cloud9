@@ -29,13 +29,13 @@ module "backup" {
 }
 
 module "cloud9" {
-  source        = "./cloud9"
-  name          = var.name
-  instance_type = var.instance_type
-  subnet        = data.terraform_remote_state.vpc.outputs.public_subnets[0]
-  owner         = var.Github_repo_owner
-  repo          = var.Github_repo_name
-  secret_arn    = module.secerts.secret_arn
-  access_key    = var.access_key
-  secret_key    = var.secret_key
+  source            = "./cloud9"
+  name              = var.name
+  instance_type     = var.instance_type
+  subnet            = data.terraform_remote_state.vpc.outputs.public_subnets[0]
+  Github_repo_owner = var.Github_repo_owner
+  Github_repo_name  = var.Github_repo_name
+  secret_arn        = module.secerts.secret_arn
+  access_key        = var.access_key
+  secret_key        = var.secret_key
 }
