@@ -13,7 +13,7 @@ data "terraform_remote_state" "vpc" {
     }
   }
 }
-module "secerts" {
+module "secrets" {
   source      = "./secrets"
   kms_arn     = module.cloud9.kms_id
   secret_name = var.name

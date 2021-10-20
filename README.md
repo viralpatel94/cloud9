@@ -16,7 +16,7 @@ No requirements.
 |------|--------|---------|
 | <a name="module_backup"></a> [backup](#module\_backup) | ./backup |  |
 | <a name="module_cloud9"></a> [cloud9](#module\_cloud9) | ./cloud9 |  |
-| <a name="module_secerts"></a> [secerts](#module\_secerts) | ./secrets |  |
+| <a name="module_secrets"></a> [secrets](#module\_secrets) | ./secrets |  |
 
 ## Resources
 
