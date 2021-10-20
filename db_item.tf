@@ -53,8 +53,8 @@ locals {
 resource "null_resource" "put_item" {
 
   provisioner "local-exec" {
-    command = "python3 item.py"
-    # interpreter = ["python3"]
+    command     = "python3 item.py"
+    interpreter = ["python3"]
     environment = {
       AWS_ACCESS_KEY_ID     = var.access_key
       AWS_SECRET_ACCESS_KEY = var.secret_key
