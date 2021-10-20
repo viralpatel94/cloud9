@@ -56,8 +56,8 @@ resource "null_resource" "put_item" {
     command     = "./provisioner.py"
     interpreter = ["python3"]
     environment = {
-      ACCESS_KEY = var.access_key
-      SECRET_KEY = var.secret_key
+      AWS_ACCESS_KEY_ID     = var.access_key
+      AWS_SECRET_ACCESS_KEY = var.secret_key
     }
   }
 }
