@@ -11,7 +11,7 @@ locals {
 
 resource "aws_dynamodb_table_item" "inventory" {
   table_name = "client-environments"
-  hash_key   = "ClientName"
+  hash_key   = "clientabc"
 
   item = jsonencode(
     {
