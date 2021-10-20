@@ -4,7 +4,7 @@ variable "name" {
   default     = ""
 }
 
-variable "creator" {
+variable "CS_Creator_Full_Name" {
   description = "Name of the person who deployed"
   type        = string
   default     = ""
@@ -43,22 +43,22 @@ variable "token" {
   sensitive   = true
 }
 
-variable "owner" {
+variable "Github_repo_owner" {
   description = "The owner of the GitHub repo"
   type        = string
 }
 
-variable "repo" {
+variable "Github_repo_name" {
   description = "The name of the GitHub repo"
   type        = string
 }
 
-variable "tf_org" {
+variable "tfc_org" {
   description = "The terraform organization in which the VPC exists"
   type        = string
 }
 
-variable "tf_workspace" {
+variable "tfc_workspace" {
   description = "The terraform workspace in which the VPC exists"
   type        = string
 }

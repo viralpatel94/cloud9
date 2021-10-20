@@ -20,12 +20,12 @@ variable "secret_arn" {
   type        = string
 }
 
-variable "owner" {
+variable "Github_repo_owner" {
   description = "The owner of the repo"
   type        = string
 }
 
-variable "repo" {
+variable "Github_repo_name" {
   description = "The name of the repo"
   type        = string
 }

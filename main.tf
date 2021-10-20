@@ -7,9 +7,9 @@ provider "aws" {
 data "terraform_remote_state" "vpc" {
   backend = "remote"
   config = {
-    organization = var.tf_org
+    organization = var.tfc_org
     workspaces = {
-      name = var.tf_workspace
+      name = var.tfc_workspace
     }
   }
 }
