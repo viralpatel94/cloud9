@@ -18,7 +18,7 @@ module "aws_backup_example" {
       completion_window = 360
       lifecycle = {
         cold_storage_after = 0
-        delete_after       = 90
+        delete_after       = 7
       },
       recovery_point_tags = {
         Environment = "prod"
