@@ -1,33 +1,33 @@
-# locals {
-#   timestamp           = timestamp()
-#   timestamp_sanitized = replace("${local.timestamp}", "/[- TZ:]/", "")
-#   object              = { "team_id-repo_name" : { "S" : "stuff" } }
-#
-#
-# }
-#
-#
-#
-#
-# resource "aws_dynamodb_table_item" "inventory" {
-#   table_name = "client-environments"
-#   hash_key   = "team_id-repo_name"
-#
-#   item = jsonencode(
-#     {
-#       "team_id-repo_name" : { "S" : "${var.team_id-repo_name}" },
-#       "CreateDate" : { "S" : "${local.timestamp_sanitized}" },
-#       "S3" : { "S" : "${module.cloud9.s3_bucket}" },
-#       "Cloud9" : { "S" : "${module.cloud9.cloud9}" },
-#       "KMS" : { "S" : "${module.cloud9.kms_id}" },
-#       "ActiveDays" : { "N" : "1" },
-#       "DaysRemaining" : { "N" : "7" },
-#       "CreatorName" : { "S" : "${var.CS_Creator_Full_Name}" },
-#       "AccessKey" : { "S" : "${var.access_key}" }
-#     }
-#   )
-#
-# }
+locals {
+  timestamp           = timestamp()
+  timestamp_sanitized = replace("${local.timestamp}", "/[- TZ:]/", "")
+  object              = { "team_id-repo_name" : { "S" : "stuff" } }
+
+
+}
+
+
+
+
+resource "aws_dynamodb_table_item" "inventory" {
+  table_name = "client-environments"
+  hash_key   = "team_id-repo_name"
+
+  item = jsonencode(
+    {
+      "team_id-repo_name" : { "S" : "${var.team_id-repo_name}" },
+      "CreateDate" : { "S" : "${local.timestamp_sanitized}" },
+      "S3" : { "S" : "${module.cloud9.s3_bucket}" },
+      "Cloud9" : { "S" : "${module.cloud9.cloud9}" },
+      "KMS" : { "S" : "${module.cloud9.kms_id}" },
+      "ActiveDays" : { "N" : "1" },
+      "DaysRemaining" : { "N" : "7" },
+      "CreatorName" : { "S" : "${var.CS_Creator_Full_Name}" },
+      "AccessKey" : { "S" : "${var.access_key}" }
+    }
+  )
+
+}
 
 # resource "aws_dynamodb_table_item" "inventory" {
 #   table_name = "client-environments"
