@@ -383,7 +383,7 @@ Resources:
           Key: Environment
           Value: AWS
         -
-          Key: team_id-repo_name
+          Key: TeamIDRepoName
           Value: !Ref Name
 
 Outputs:

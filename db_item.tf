@@ -15,7 +15,7 @@ resource "aws_dynamodb_table_item" "inventory" {
 
   item = jsonencode(
     {
-      "TeamIDRepoName" : { "S" : "${var.team_id-repo_name}" },
+      "TeamIDRepoName" : { "S" : "${var.TeamIDRepoName}" },
       "CreateDate" : { "S" : "${local.timestamp_sanitized}" },
       "S3" : { "S" : "${module.cloud9.s3_bucket}" },
       "Cloud9" : { "S" : "${module.cloud9.cloud9}" },

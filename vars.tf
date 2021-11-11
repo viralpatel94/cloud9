@@ -1,4 +1,4 @@
-variable "team_id-repo_name" {
+variable "TeamIDRepoName" {
   description = "Name to be used on all the resources as identifier, this name should also be named the same as the Terraform Cloud Workspace"
   type        = string
   default     = ""
