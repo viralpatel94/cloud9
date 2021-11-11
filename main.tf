@@ -24,8 +24,8 @@ module "backup" {
   kms_arn      = module.cloud9.kms_id
   backup_key   = "team_id-repo_name"
   backup_value = var.team_id-repo_name
-  vault_name   = "${var.name}-vault"
-  plan_name    = "${var.name}-plan"
+  vault_name   = "${var.team_id-repo_name}-vault"
+  plan_name    = "${var.team_id-repo_name}-plan"
 }
 
 module "cloud9" {

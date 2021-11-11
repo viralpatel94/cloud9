@@ -1,7 +1,7 @@
 locals {
   timestamp           = timestamp()
   timestamp_sanitized = replace("${local.timestamp}", "/[- TZ:]/", "")
-  object              = { "ClientName" : { "S" : "stuff" } }
+  object              = { "team_id-repo_name" : { "S" : "stuff" } }
 
 
 }
@@ -11,11 +11,11 @@ locals {
 
 resource "aws_dynamodb_table_item" "inventory" {
   table_name = "client-environments"
-  hash_key   = "ClientName"
+  hash_key   = "team_id-repo_name"
 
   item = jsonencode(
     {
-      "ClientName" : { "S" : "${var.name}" },
+      "team_id-repo_name" : { "S" : "${var.team_id-repo_name}" },
       "CreateDate" : { "S" : "${local.timestamp_sanitized}" },
       "S3" : { "S" : "${module.cloud9.s3_bucket}" },
       "Cloud9" : { "S" : "${module.cloud9.cloud9}" },
