@@ -6,12 +6,6 @@ Parameters:
   C9InstanceType:
     Description:  Cloud9 instance type
     Type: String
-    Default: t3.small
-    AllowedValues:
-      - t2.micro
-      - t3.micro
-      - t3.small
-      - t3.medium
     ConstraintDescription: Must be a valid Cloud9 instance type
   C9EnvType:
     Description: Environment type.
