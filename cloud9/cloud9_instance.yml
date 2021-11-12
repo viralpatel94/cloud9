@@ -9,7 +9,7 @@ Parameters:
     ConstraintDescription: Must be a valid Cloud9 instance type
   C9EnvType:
     Description: Environment type.
-    Default: self
+    Default: 3rdParty
     Type: String
     AllowedValues:
       - self
