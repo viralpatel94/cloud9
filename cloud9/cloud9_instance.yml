@@ -18,7 +18,7 @@ Parameters:
   OwnerArn:
     Type: String
     Description: The Arn of the Cloud9 Owner to be set if 3rdParty deployment.
-    Default: "arn:aws:sts::439380838513:assumed-role/AWSReservedSSO_AWSAdministratorAccess_ab5039d4b932257a/*"
+    Default: "arn:aws:sts::439380838513:assumed-role/AWSReservedSSO_AWSAdministratorAccess_ab5039d4b932257a/session"
   S3Bucket:
     Type: String
     Description: The S3 bucket which Cloud9 instance should have access to
