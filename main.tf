@@ -38,4 +38,5 @@ module "cloud9" {
   secret_arn        = module.secrets.secret_arn
   access_key        = var.access_key
   secret_key        = var.secret_key
+  CS_Creator_Email  = var.CS_Creator_Email
 }

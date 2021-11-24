@@ -43,3 +43,8 @@ variable "secret_key" {
   sensitive   = true
   default     = ""
 }
+
+variable "CS_Creator_Email" {
+  description = "Vercel email of the person deploying the instance"
+  type        = string
+}

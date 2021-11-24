@@ -54,7 +54,7 @@ vars =   [
         "sensitive": "false"
     },
     {
-        "key": "CS_Creator_Full_Name",
+        "key": "CS_Creator_Email",
         "value": "",
         "sensitive": "false"
     },

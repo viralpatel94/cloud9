@@ -22,7 +22,7 @@ resource "aws_dynamodb_table_item" "inventory" {
       "KMS" : { "S" : "${module.cloud9.kms_id}" },
       "ActiveDays" : { "N" : "1" },
       "DaysRemaining" : { "N" : "7" },
-      "CreatorName" : { "S" : "${var.CS_Creator_Full_Name}" },
+      "CreatorEmail" : { "S" : "${var.CS_Creator_Email}" },
       "AccessKey" : { "S" : "${var.access_key}" }
     }
   )

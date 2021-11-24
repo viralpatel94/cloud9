@@ -7,18 +7,20 @@ Parameters:
     Description:  Cloud9 instance type
     Type: String
     ConstraintDescription: Must be a valid Cloud9 instance type
-  C9EnvType:
-    Description: Environment type.
-    Default: 3rdParty
+  # C9EnvType:
+  #   Description: Environment type.
+  #   Default: 3rdParty
+  #   Type: String
+  #   AllowedValues:
+  #     - self
+  #     - 3rdParty
+  CreatorEmail:
     Type: String
-    AllowedValues:
-      - self
-      - 3rdParty
-    ConstraintDescription: must specify self or 3rdParty.
-  OwnerArn:
-    Type: String
-    Description: The Arn of the Cloud9 Owner to be set if 3rdParty deployment.
-    Default: "arn:aws:sts::439380838513:assumed-role/AWSReservedSSO_AWSAdministratorAccess_ab5039d4b932257a/viral.patel@vercel.com"
+    Description: Email of the Vercel employee deploying and needing access to IDE
+  # OwnerArn:
+  #   Type: String
+  #   Description: The Arn of the Cloud9 Owner to be set if 3rdParty deployment.
+  #   Default: "arn:aws:sts::439380838513:assumed-role/AWSReservedSSO_AWSAdministratorAccess_ab5039d4b932257a/viral.patel@vercel.com"
   S3Bucket:
     Type: String
     Description: The S3 bucket which Cloud9 instance should have access to
@@ -36,8 +38,8 @@ Parameters:
     Description: The name of the client
     Default: ""
 
-Conditions:
-  Create3rdPartyResources: !Equals [ !Ref C9EnvType, 3rdParty ]
+# Conditions:
+#   Create3rdPartyResources: !Equals [ !Ref C9EnvType, 3rdParty ]
 
 Resources:
 ################## PERMISSIONS AND ROLES #################
@@ -368,7 +370,13 @@ Resources:
         Ref: C9InstanceType
       Name:
         Ref: AWS::StackName
-      OwnerArn: !If [Create3rdPartyResources, !Ref OwnerArn, !Ref "AWS::NoValue" ]
+      OwnerArn:
+        !Join
+          - ''
+          - - 'arn:aws:sts::'
+            - !Ref AWS::AccountId
+            - ':assumed-role/AWSReservedSSO_AWSCloud9User_73b81e1804d53f8c/'
+            - !Ref CreatorEmail
       Tags:
         -
           Key: SSMBootstrap

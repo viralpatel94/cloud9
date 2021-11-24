@@ -29,7 +29,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_CS_Creator_Full_Name"></a> [CS\_Creator\_Full\_Name](#input\_CS\_Creator\_Full\_Name) | Name of the person who deployed | `string` | `""` | no |
+| <a name="input_CS_Creator_Email"></a> [CS\_Creator\_Email](#input\_CS\_Creator\_Email) | Name of the person who deployed | `string` | `""` | no |
 | <a name="input_Github_repo_name"></a> [Github\_repo\_name](#input\_Github\_repo\_name) | The name of the GitHub repo | `string` | n/a | yes |
 | <a name="input_Github_repo_owner"></a> [Github\_repo\_owner](#input\_Github\_repo\_owner) | The owner of the GitHub repo | `string` | n/a | yes |
 | <a name="input_TeamIDRepoName"></a> [TeamIDRepoName](#input\_TeamIDRepoName) | Name to be used on all the resources as identifier, this name should also be named the same as the Terraform Cloud Workspace | `string` | `""` | no |

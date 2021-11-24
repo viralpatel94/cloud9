@@ -4,7 +4,7 @@ variable "TeamIDRepoName" {
   default     = ""
 }
 
-variable "CS_Creator_Full_Name" {
+variable "CS_Creator_Email" {
   description = "Name of the person who deployed"
   type        = string
   default     = ""
